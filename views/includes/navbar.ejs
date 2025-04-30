@@ -1,0 +1,93 @@
+
+  <style>
+  
+  .search-btn {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0 1rem;
+    border: none;
+  }
+  .search-btn:hover {
+    background-color: #fe424d;
+    color: #fff;
+    opacity: 0.7;
+  }
+  .search-btn i {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .search-inp {
+    border-radius: 25px;
+    padding: 0.5rem 3rem;
+  }
+  @media (min-width: 992px) {
+    .offcanvas-body {
+      flex-direction: row;
+      align-items: center;
+    }
+    .offcanvas-body .navbar-nav {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .offcanvas-body .d-flex {
+      flex: 2;
+      justify-content: center;
+    }
+    .offcanvas-body .navbar-nav:last-child {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+</style>
+
+  
+  
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings">
+        <i class="fa-solid fa-compass-drafting"></i>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-lg-flex justify-content-between align-items-center w-100">
+          
+          <div class="navbar-nav">
+            <a class="nav-link" href="/listings">Explore</a>
+          </div>
+        
+         
+          <div class="mt-3 mt-lg-0 d-flex justify-content-center flex-grow-1">
+            <form class="d-flex w-75" action="/listings/search" method="GET">
+              <input class="form-control me-2 search-inp" type="search" name="searchedList" placeholder="Search Destinations">
+              <button class="btn btn-outline-success search-btn" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>Search
+              </button>
+            </form>
+          </div>
+        
+         
+          <div class="navbar-nav mt-3 mt-lg-0">
+            <a class="nav-link" href="/listings/new">Airbnb your home</a>
+            <% if (!currUser) { %>
+              <a class="nav-link" href="/signUp"><b>Sign Up</b></a>
+              <a class="nav-link" href="/login"><b>Log In</b></a>
+            <% } %>
+            <% if (currUser) { %>
+              <a class="nav-link" href="/logout"><b>Log Out</b></a>
+            <% } %>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </nav>
+  

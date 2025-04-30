@@ -1,0 +1,172 @@
+body{
+    font-family: "Open Sans", sans-serif;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+
+}
+.container{
+    flex:1;
+}
+.navbar {
+    height:5rem;
+    background-color:white;
+}
+.navbar-brand{
+    color:#fe424d;
+    font-size:1.6rem;
+}
+.nav-link{
+    color:#222222 !important;
+}
+/*Footer*/
+.f-info-links a{
+    text-decoration:none;
+    color:#222222;
+}
+.f-info-links a:hover{
+    text-decoration:underline;
+}
+.f-info{
+    display:flex;
+    height:8rem;
+    background-color:#ebebeb;
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+
+}
+.f-info-socials,
+.f-info-socials,
+.f-info-brand{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.f-info-socials i{
+    font-size:1.2rem;
+    margin-right:1rem;
+}
+
+/* cards */
+.card{
+    border:none !important;
+    margin-bottom:2rem;
+}
+.card-img-top{
+    border-radius:1rem !important;
+    object-fit:cover !important;
+    width:25vw;
+}
+.card-body{
+    padding:0;
+}
+.card-text p{
+    font-weight:400 !important;
+}
+.listing_link{
+    text-decoration:none;
+}
+.card-img-overlay{
+    opacity:0;
+}
+.card-img-overlay:hover{
+    opacity:0.3;
+    background-color:white;
+}
+/* edit button and add button */
+.btn-add{
+    background-color:#fe424d;
+    border:none;
+    color:black;
+}
+.btn-add:hover{
+    background-color:#fe424d;
+    border:none;
+    color:black;
+    opacity:0.7;
+
+}
+/* show page */
+.show-img{
+    width:75vh;
+    height:40vh;
+
+}
+.btns{
+    display:flex;
+}
+/* review border */
+.border{
+    border:2px solid black !important;
+
+}
+/* icons*/
+#filters{
+    display:flex;
+    flex-wrap:wrap;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left:2rem;
+    overflow-x: hidden;
+    
+}
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size:1rem;
+    margin-top:1.5rem;
+    opacity:0.6;
+
+    
+    
+} 
+.filter a{
+    text-decoration:none;
+    color:black;
+}
+
+.filter:hover{
+    opacity:1;
+    cursor:pointer;
+}
+.tax-info{
+    display:none;
+}
+
+.tax-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 👈 VERY important */
+    width: 200px; /* instead of 16vw, use fixed px */
+    max-width: 90vw; /* responsive: prevent overflow */
+    margin-left:2rem;
+}
+
+.form-check {
+    width: 100%;
+}
+
+.form-check-input {
+    position: static; /* 👈 remove relative and left shifting */
+    margin-left: auto; /* 👈 push switch to the right */
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+.filter.highlight {
+    opacity: 1;
+    border-bottom: 4px solid black;
+    padding-bottom: 5px;
+}
+

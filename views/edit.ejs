@@ -1,0 +1,82 @@
+<% layout("layouts/boilerplate")%>
+<body>
+    
+    <h3 style="text-align:center;" class="mt-4" >Edit Listings</h3>
+    <div class="row">
+    <div class="col-8 offset-2">
+    <form method="post" action ="/listings/<%=editList._id%>?_method=PUT"  novalidate class="needs-validation" enctype="multipart/form-data">
+        
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" value="<%=editList.title%>" type="text" class="form-control" required/>
+            
+            <div class="invalid-feedback">enter valid title</div>
+        </div>
+        <div  class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]"class="form-control" required><%=editList.description%></textarea> 
+            <div class="invalid-feedback">enter valid description</div>
+        </div>
+        <% if (editList.image && editList.image.url) { %>
+            <div class="mb-3" >
+                Original Image<br/>
+                <img src="<%= originalImageUrl %>"style="width:15rem;" />
+            </div>
+          <% } %>
+          
+
+        
+        
+        <div  class="mb-3">
+            <label for="image" class="form-label">Upload New Image</label>
+            <input name="listing[image]" type="file" class="form-control" required/>
+            <div class="invalid-feedback">enter valid link for image</div>
+        </div>
+        <div class="row">
+        <div  class="mb-3 col-md-6">
+            <label for="price" class="form-label">Price</label>
+            <input name="listing[price]" value="<%=editList.price%>" type="number" class="form-control" required/>
+            <div class="invalid-feedback">enter valid price</div>
+        </div>
+        <div  class="mb-3 col-md-6">
+            <label for="location" class="form-label">Location</label>
+            <input name="listing[location]"  value="<%=editList.location%>" type="text" class="form-control" required/>
+            <div class="invalid-feedback">enter valid location</div>
+        </div>
+        
+        </div>
+        <div  class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input name="listing[country]" value="<%=editList.country%>" type="text" class="form-control" required/>
+            <div class="invalid-feedback">enter valid country name</div>
+        </div>
+        <div  class="mb-3 col-md-6">
+            
+            <div class="form-group">
+                <label for="category" class="form-label">Select Category</label>
+                <select class="form-control" name="listing[category]" id="category" required>
+                  <option value="Trending" <%= editList.category === 'Trending' ? 'selected' : '' %>>Trending</option>
+                  <option value="Boats" <%= editList.category === 'Boats' ? 'selected' : '' %>>Boats</option>
+                  <option value="Camping" <%= editList.category === 'Camping' ? 'selected' : '' %>>Camping</option>
+                  <option value="CreativeSpacing" <%= editList.category === 'CreativeSpacing' ? 'selected' : '' %>>CreativeSpacing</option>
+                  <option value="Vineyards" <%= editList.category === 'Vineyards' ? 'selected' : '' %>>Vineyards</option>
+                  <option value="Beachfront" <%= editList.category === 'Beachfront' ? 'selected' : '' %>>Beachfront</option>
+                  <option value="AmazingPools" <%= editList.category === 'AmazingPools' ? 'selected' : '' %>>AmazingPools</option>
+                  <option value="Lake" <%= editList.category === 'Lake' ? 'selected' : '' %>>Lake</option>
+                  <option value="Arctic" <%= editList.category === 'Arctic' ? 'selected' : '' %>>Arctic</option>
+                  <option value="Golfing" <%= editList.category === 'Golfing' ? 'selected' : '' %>>Golfing</option>
+                </select>
+              </div>
+            <div class="invalid-feedback">select valid category</div>
+        </div>
+        
+        
+        <button class="btn btn-dark btn-add mb-5">Edit</button>
+        
+
+
+
+    </form>
+    </div>
+    </div>
+</body>
